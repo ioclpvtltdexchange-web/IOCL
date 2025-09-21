@@ -156,11 +156,11 @@ const Home = () => {
             <div className="p-3 sm:p-4 space-y-3">
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-2 gap-1 sm:gap-0">
                 <span className="text-gray-700 text-xs sm:text-sm">📅 Starting date for application</span>
-                <span className="text-red-600 font-semibold text-xs sm:text-sm">22-08-2025 (02:00PM)</span>
+                <span className="text-red-600 font-semibold text-xs sm:text-sm">25-09-2025 (02:00PM)</span>
               </div>
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center py-2 gap-1 sm:gap-0">
                 <span className="text-gray-700 text-xs sm:text-sm">📅 Last date for online submission</span>
-                <span className="text-red-600 font-semibold text-xs sm:text-sm">08-09-2025 (11:59 PM)</span>
+                <span className="text-red-600 font-semibold text-xs sm:text-sm">15-10-2025 (11:59 PM)</span>
               </div>
             </div>
           )}

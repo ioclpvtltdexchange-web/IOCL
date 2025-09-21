@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { authAPI } from '../services/api'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import logo from '../assets/IOCL logo.png'
 
 const Print = () => {
   const [userData, setUserData] = useState(null)
@@ -26,20 +27,20 @@ const Print = () => {
         return
       }
 
-      
+
 
       // Get all user data from different endpoints
       const [candidateResponse, qualificationResponse, documentResponse] = await Promise.all([
         authAPI.getCandidateDetails(user.userId).catch((err) => {
-          
+
           return { candidateDetails: null }
         }),
         authAPI.getQualificationDetails(user.userId).catch((err) => {
-          
+
           return { qualificationDetails: null }
         }),
         authAPI.getDocumentDetails(user.userId).catch((err) => {
-          
+
           return { documentDetails: null }
         })
       ])
@@ -54,7 +55,7 @@ const Print = () => {
         documentDetails: documentResponse.documentDetails
       }
 
-  
+
 
       setUserData(completeUserData)
     } catch (error) {
@@ -110,7 +111,7 @@ const Print = () => {
         <div className="text-center mb-8 border-b-2 border-red-600 pb-6">
           <div className="flex justify-center mb-4">
             <img
-              src="/src/assets/IOCL logo.png"
+              src={logo}
               alt="IOCL India Limited"
               className="h-20 w-auto"
             />

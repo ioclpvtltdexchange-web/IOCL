@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Base API configuration
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -18,9 +18,9 @@ export const authAPI = {
 
   // Generate OTP for registration
   generateOTP: async (mobileNumber, emailAddress) => {
-    const response = await api.post('/auth/generate-otp', { 
-      mobileNumber, 
-      emailAddress 
+    const response = await api.post('/auth/generate-otp', {
+      mobileNumber,
+      emailAddress
     })
     return response.data
   },
@@ -45,10 +45,10 @@ export const authAPI = {
 
   // Change password
   changePassword: async (userId, oldPassword, newPassword) => {
-    const response = await api.post('/auth/change-password', { 
-      userId, 
-      oldPassword, 
-      newPassword 
+    const response = await api.post('/auth/change-password', {
+      userId,
+      oldPassword,
+      newPassword
     })
     return response.data
   },
