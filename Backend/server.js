@@ -1,4 +1,3 @@
-
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
@@ -21,7 +20,13 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }))
 // Define Routes
 app.use('/api/auth', require('./routes/auth'))
 
+// Test API route
+app.get('/api/test', (req, res) => {
+  res.json({ message: 'API is working' })
+})
+
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+
 
